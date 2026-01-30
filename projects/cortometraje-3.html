@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>La Entrevista | David Garcia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+<div id="page-transition">
+  <h1 id="transition-text">La Entrevista</h1>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+  <div class="container-fluid px-4">
+    <div class="navbar-nav ms-auto d-flex gap-4">
+      <span onclick="goTo('../index.html','Inicio')">Inicio</span>
+      <span onclick="goTo('../portfolio.html','Portafolio')">Portafolio</span>
+      <span onclick="goTo('../about.html','Sobre Mi')">Sobre Mi</span>
+    </div>
+  </div>
+</nav>
+
+<section class="project-detail">
+
+  <div class="project-header">
+    <h1>La Entrevista</h1>
+
+    <div class="project-meta">
+      <p>
+Jeffrey Martínez recibe una misteriosa carta para una entrevista de trabajo. Dispuesto a todo con tal de conseguir el puesto, es sometido a una de prueba
+que determinarán si es realmente apto para el empleo.
+      </p>
+      <div class="meta-right">
+        <span>Categoría: Cortometrajes</span>
+        <span>Año: 2025</span>
+         <span>Rol: Director, Guionista, Director de fotografía, Edición</span>       
+      </div>
+    </div>
+  </div>
+
+<div class="project-video">
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/A1BU3Ban94c"
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+
+  <!-- GALERÍA -->
+  <div class="project-gallery">
+    <img src="../images/laentrevista/LE1.jpg">
+    <img src="../images/laentrevista/LE2.jpg">
+    <img src="../images/laentrevista/LE3.jpg">
+    <img src="../images/laentrevista/LE4.jpg">
+    <img src="../images/laentrevista/LE5.jpg">
+    <img src="../images/laentrevista/LE6.jpg">
+  </div>
+
+</section>
+
+<script src="../js/page-transition.js"></script>
+</body>
+
+<footer class="site-footer">
+  <div class="footer-inner container">
+
+    <div class="footer-left">
+      <div class="brand">David Garcia</div>
+      <div class="tagline">Fotografía · Video · Narrativa visual</div>
+    </div>
+
+        <div class="footer-center">
+      <nav class="footer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="portfolio.html">Portafolio</a>
+        <a href="about.html">Sobre Mi</a>
+      </nav>
+    </div>
+    
+    <div class="footer-right">
+      <div class="contact">
+        <a href="mailto:davgares39@gmail.com" class="footer-link">
+          davgares39@gmail.com
+        </a>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/fabricio._.1?igsh=aWx2c2JycWk5dWxy"
+           target="_blank"
+           class="footer-link">
+           Instagram
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <small>© <span id="footer-year"></span> David Garcia — Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</html>

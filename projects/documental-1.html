@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Boda | David Garcia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+<div id="page-transition">
+  <h1 id="transition-text">Boda</h1>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+  <div class="container-fluid px-4">
+    <div class="navbar-nav ms-auto d-flex gap-4">
+      <span onclick="goTo('../index.html','Inicio')">Inicio</span>
+      <span onclick="goTo('../portfolio.html','Portafolio')">Portafolio</span>
+      <span onclick="goTo('../about.html','Sobre Mi')">Sobre Mi</span>
+    </div>
+  </div>
+</nav>
+
+<section class="project-detail">
+
+  <div class="project-header">
+    <h1>Boda</h1>
+
+    <div class="project-meta">
+      <p>
+      Videografía de Bodas.
+      </p>
+
+      <div class="meta-right">
+        <span>Categoría: Documentales</span>
+        <span>Año: 2025</span>
+        <span>Rol: Operador de cámara</span>
+
+      </div>
+    </div>
+  </div>
+
+<div class="project-video">
+  <div class="video-wrapper insta">
+    <iframe 
+      src="https://www.instagram.com/reel/DJGLFFqsjoG/embed"
+      frameborder="0"
+      scrolling="no"
+      allowtransparency="true"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+
+  <!-- GALERÍA -->
+  <div class="project-gallery">
+    <img src="../images/boda/B1.jpg">
+    <img src="../images/boda/B2.jpg">
+    <img src="../images/boda/B3.jpg">
+    <img src="../images/boda/B4.jpg">
+  </div>
+
+</section>
+
+<script src="../js/page-transition.js"></script>
+</body>
+
+
+<footer class="site-footer">
+  <div class="footer-inner container">
+
+    <div class="footer-left">
+      <div class="brand">David Garcia</div>
+      <div class="tagline">Fotografía · Video · Narrativa visual</div>
+    </div>
+
+        <div class="footer-center">
+      <nav class="footer-nav">
+        <a href="index.html">Inicio</a>
+        <a href="portfolio.html">Portafolio</a>
+        <a href="about.html">Sobre Mi</a>
+      </nav>
+    </div>
+    
+    <div class="footer-right">
+      <div class="contact">
+        <a href="mailto:davgares39@gmail.com" class="footer-link">
+          davgares39@gmail.com
+        </a>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/fabricio._.1?igsh=aWx2c2JycWk5dWxy"
+           target="_blank"
+           class="footer-link">
+           Instagram
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <small>© <span id="footer-year"></span> David Garcia — Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</html>

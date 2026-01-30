@@ -1,0 +1,444 @@
+/* estilos globales y tipografía */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:#000;
+  color:#fff;
+  font-family: 'Oswald', sans-serif; /* fuente moderna usada en toda la página */
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* NAVBAR */
+.custom-nav{
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  padding: 0.6rem 0;
+}
+.navbar-brand-plain { width:46px; height:46px; } /* espacio visual */
+.navbar .navbar-nav span{
+  color:#fff;
+  margin-left:18px;
+  cursor:pointer;
+  font-weight:400;
+  letter-spacing:0.6px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* VIDEOS (solo esta sección controla los videos) */
+.bg-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1; /* base */
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}
+
+/* video actual visible debajo del texto */
+.bg-video.active{
+  z-index:2;
+}
+
+/* video entrante: empieza 'recortado' y crecerá con clip-path */
+.bg-video.next{
+  z-index:3;
+  /* comienza totalmente recortado en la columna izquierda */
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
+/* HERO TEXT (permanente, por encima de los videos) */
+.hero-text{
+  position:absolute;
+  left:5%;
+  bottom:8%;
+  z-index:10; /* muy por encima para que no lo tape la animación */
+  pointer-events:none;
+  max-width:70%;
+}
+
+.hero-text h1{
+  font-size:4.2rem;
+  line-height:0.92;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:0.4rem;
+  color:#fff;
+  text-transform:uppercase;
+}
+
+/* subtítulo más profesional */
+.hero-sub{
+  font-size:1.05rem;
+  color:rgba(255,255,255,0.92);
+  font-weight:400;
+  max-width:60ch;
+}
+
+/* TRANSICIÓN ENTRE PÁGINAS (overlay blanco con texto negro) */
+#page-transition{
+  position:fixed;
+  inset:0;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transform:translateY(100%);
+}
+#page-transition h1{
+  color:black;
+  font-size:3.5rem;
+  font-weight:700;
+  letter-spacing:1px;
+  margin:0;
+}
+
+/* Responsive: reducir hero title en pantallas pequeñas */
+@media (max-width: 900px){
+  .hero-text h1{ font-size:2.6rem; }
+  .hero-sub{ font-size:0.95rem; }
+  .hero-text { left:4%; bottom:6%; max-width:86%; }
+}
+
+/* PORTAFOLIO / ABOUT (estilos base para coherencia) */
+.portfolio, .about {
+  padding: 120px 6% 80px;
+  background:#000;
+  color:#fff;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Estilos para las imágenes/vídeos en portfolio (si llegan a usarse) */
+.portfolio-video video{
+  width:100%;
+  height:60vh;
+  object-fit:cover;
+}
+.portfolio-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+  margin-top:28px;
+}
+.portfolio-grid img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
+}
+
+/* pequeñas mejoras visuales en links del nav al pasar el rato */
+.navbar .navbar-nav span:hover{ opacity:0.88; transform: translateY(-1px); transition: 180ms; }
+
+
+/* =========================
+   PROJECTS / PORTFOLIO
+========================= */
+
+.projects-section{
+  padding:140px 6% 80px;
+  background:#000;
+}
+
+.projects-title{
+  font-size:4rem;
+  font-weight:700;
+  margin-bottom:40px;
+}
+
+.projects-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  margin-bottom:50px;
+}
+
+.projects-filters span{
+  cursor:pointer;
+  color:#777;
+  font-weight:400;
+  letter-spacing:0.5px;
+}
+
+.projects-filters span.active{
+  color:#fff;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.project-item{
+  text-decoration:none;
+  color:#fff;
+  overflow:hidden;
+}
+
+.project-item img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  transition:transform 0.6s ease;
+}
+
+.project-item:hover img{
+  transform:scale(1.08);
+}
+
+.project-item h3{
+  margin-top:14px;
+  font-size:1rem;
+  font-weight:400;
+  letter-spacing:0.6px;
+}
+
+/* =========================
+   PROJECT DETAIL
+========================= */
+
+.project-detail{
+  padding:140px 6% 80px;
+}
+
+.project-header h1{
+  font-size:3rem;
+  margin-bottom:30px;
+}
+
+.project-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:60px;
+}
+
+.meta-right span{
+  display:block;
+  color:#aaa;
+  margin-bottom:8px;
+}
+
+.project-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.project-gallery img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section{
+  padding:140px 6% 80px;
+}
+
+.about-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.about-text h1{
+  font-size:3rem;
+  margin-bottom:30px;
+}
+
+.about-text p{
+  color:#ddd;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.about-image img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+}
+
+.project-video{
+  margin:80px auto 60px;
+  max-width:1100px;
+  padding:0 20px;
+}
+
+.video-wrapper{
+  position:relative;
+  padding-top:56.25%; /* 16:9 */
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.video-wrapper iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+.video-wrapper.insta{
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+
+
+/*pro?*/
+/*
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: 8px;
+  gap: 18px;
+  padding: 60px 0 120px;
+}
+
+/* Cada imagen */
+.project-gallery img {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
+  cursor: pointer;
+}
+
+/* Hover elegante */
+.project-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,.55);
+}
+
+
+
+/* =========================
+   FOOTER - Minimal / Profesional
+   ========================= */
+
+.site-footer{
+  background:#050505;
+  color:rgba(255,255,255,0.92);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 40px 0 18px;
+  margin-top: 80px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.footer-inner{
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding: 0 6%;
+}
+
+.footer-left .brand{
+  font-size:1.05rem;
+  font-weight:700;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+
+.footer-left .tagline{
+  color:rgba(255,255,255,0.7);
+  font-size:.95rem;
+  max-width:320px;
+}
+
+.footer-nav{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  justify-content:center;
+}
+
+.footer-nav a{
+  color:rgba(255,255,255,0.85);
+  text-decoration:none;
+  font-weight:400;
+  font-size:0.95rem;
+}
+
+.footer-nav a:hover{
+  opacity:0.9;
+  transform:translateY(-2px);
+  transition:120ms;
+}
+
+.footer-right{
+  text-align:right;
+}
+
+/* Contact + social links */
+.footer-link{
+  display:inline-block;
+  color:rgba(255,255,255,0.85);
+  text-decoration:none;
+  margin-left:10px;
+  font-size:.95rem;
+}
+
+.footer-link:hover{ opacity:0.92; text-decoration:underline; }
+
+/* bottom row */
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.03);
+  margin-top:18px;
+  padding:12px 0;
+  text-align:center;
+  color:rgba(255,255,255,0.55);
+  font-size:.85rem;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .footer-inner{
+    flex-direction:column;
+    gap:18px;
+    align-items:flex-start;
+    padding: 0 5%;
+  }
+  .footer-right { text-align:left; }
+  .footer-nav { flex-wrap:wrap; justify-content:flex-start; gap:12px; }
+  .footer-left .tagline{ max-width:100%; }
+}
+
+
+.video-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.video-thumb-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
