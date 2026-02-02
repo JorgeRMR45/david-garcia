@@ -1,3 +1,75 @@
+h1, h2, h3, h4, .brand {
+  font-family: 'Aquire', sans-serif;
+  letter-spacing: 2px;
+}
+
+
+body {
+  font-size: 19px;
+}
+
+p, span, a {
+  font-size: 1.12rem;
+}
+
+#page-transition {
+  pointer-events: none;
+}
+.hero-btn{
+  pointer-events: auto;
+}
+
+.about-home {
+  padding: 140px 0;
+  background: #0b0b0b;
+}
+
+.about-home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 520px;
+}
+
+.about-text h2 {
+  margin-bottom: 30px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 2px;
+  display: block;
+  margin-left: auto;
+}
+
+
+
+.hero-btn {
+  margin-top: 20px;
+  padding: 12px 36px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: white;
+  color: black;
+}
+
+
 /* estilos globales y tipografía */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
@@ -15,14 +87,15 @@ body{
   backdrop-filter: blur(6px);
   padding: 0.6rem 0;
 }
-.navbar-brand-plain { width:46px; height:46px; } /* espacio visual */
 .navbar .navbar-nav span{
   color:#fff;
   margin-left:18px;
   cursor:pointer;
-  font-weight:400;
-  letter-spacing:0.6px;
+  font-weight:500;
+  font-size:1.05rem;
+  letter-spacing:1px;
 }
+
 
 /* HERO */
 .hero{
@@ -78,7 +151,7 @@ body{
 
 /* subtítulo más profesional */
 .hero-sub{
-  font-size:1.05rem;
+  font-size:1.15rem;
   color:rgba(255,255,255,0.92);
   font-weight:400;
   max-width:60ch;
@@ -397,7 +470,7 @@ body{
   color:rgba(255,255,255,0.85);
   text-decoration:none;
   margin-left:10px;
-  font-size:.95rem;
+  font-size:1rem;
 }
 
 .footer-link:hover{ opacity:0.92; text-decoration:underline; }
