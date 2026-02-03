@@ -4,9 +4,12 @@
 const transition = document.getElementById("page-transition");
 const transitionText = document.getElementById("transition-text");
 
+// ⚡ Base path automático para GitHub Pages
+const BASE_PATH = "/david-garcia/";
+
 function goTo(url, label) {
   if (!transition) {
-    window.location.href = url;
+    window.location.href = BASE_PATH + url;
     return;
   }
 
@@ -14,13 +17,12 @@ function goTo(url, label) {
     transitionText.textContent = label.toUpperCase();
   }
 
-  // mostrar overlay
   gsap.to(transition, {
     y: "0%",
     duration: 0.6,
     ease: "power2.inOut",
     onComplete: () => {
-      window.location.href = url;
+      window.location.href = BASE_PATH + url;
     }
   });
 }
